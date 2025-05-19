@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>ペット情報一覧</title>
+  <link rel="stylesheet" th:href="@{/css/list.css}"/>
+</head>
+<body>
+<h2>[[${user.name}]] さんのペット情報</h2>
+<p>
+  <a href="/user/2/pets/add">＋ ペットを追加する</a>
+</p>
+<table border="1">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>名前</th>
+    <th>種類</th>
+    <th>品種</th>
+    <th>性別</th>
+    <th>生年月日</th>
+    <th>体重</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="pet : ${petList}">
+    <td th:text="${pet.id}"></td>
+    <td>
+      <a th:href="@{'/pets/' + ${pet.id} + '/medical/add'}" th:text="${pet.name}"></a>
+    </td>
+    <td th:text="${pet.species}"></td>
+    <td th:text="${pet.breed}"></td>
+    <td th:switch="${pet.sex}">
+      <span th:case="'M'">オス</span>
+      <span th:case="'F'">メス</span>
+      <span th:case="*">不明</span>
+    </td>
+    <td th:text="${#temporals.format(pet.birthDate, 'yyyy/MM/dd')}"></td>
+    <td th:text="${pet.weight + 'kg'}"></td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>

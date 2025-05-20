@@ -28,6 +28,7 @@
 - Git / GitHub（バージョン管理）
 - IntelliJ IDEA（開発環境）
 
+
 ## 機能一覧
 
 | No | 機能名                     | 概要                                                                 |

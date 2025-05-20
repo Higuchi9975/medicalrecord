@@ -8,14 +8,14 @@
 ## 使用技術
 
 ### バックエンド
-- Java 17
-- Spring Boot 3.4.5
-  - Spring Web（MVC構成）
-  - Spring Data JPA（MySQLとのデータ永続化）
-  - Spring Security（ログイン・認証）
-- Lombok（Getter/Setterなどの自動生成）
-- Gradle（ビルド＆依存管理）
-- Spring Boot DevTools（開発支援）
+- Java 
+- Spring Boot 
+  - Spring Web
+  - Spring Data JPA
+  - Spring Security
+- Lombok
+- Gradle
+- Spring Boot DevTools
 
 ### フロントエンド
 - Thymeleaf（テンプレートエンジン）

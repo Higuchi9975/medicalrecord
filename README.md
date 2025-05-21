@@ -7,7 +7,7 @@
 
 ## 使用技術
 
-### バックエンド
+**バックエンド**
 - Java 
 - Spring Boot 
   - Spring Web
@@ -17,11 +17,11 @@
 - Gradle
 - Spring Boot DevTools
 
-### フロントエンド
+**フロントエンド**
 - Thymeleaf（テンプレートエンジン）
 - HTML / CSS / JavaScript
 
-### データベース
+**データベース**
 - MySQL
 
 ### その他

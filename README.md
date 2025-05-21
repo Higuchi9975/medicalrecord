@@ -41,10 +41,12 @@
 | 6  | 診療記録登録画面     | ペットの詳細ページから診療記録入力フォームに遷移できる（症状・治療内容） |
 
 
+
 ## 今後追加予定の機能
 
 - ペット情報の編集・削除機能（CRUD）
 - 予約登録機能
+
 
 
 ## 利用イメージ
@@ -82,10 +84,15 @@ Spring Security のデフォルトエラーハンドリングをカスタマイ�
 飼い主に紐づくペット情報を登録できます。　入力項目：名前、種類、品種、性別、生年月日、体重
 登録ボタンを押すと、対象ユーザーのペット一覧ページへ自動遷移し、登録結果が即時表示されます。
 
-![あ](https://github.com/user-attachments/assets/73324d76-eb70-49a8-a9f4-6b43ffd0cc7a)
+![ペット追加](https://github.com/user-attachments/assets/6d85fa96-1225-4fff-993c-6b6afb8893cf)
 
-![ペット情報の登録](https://github.com/user-attachments/assets/56ca7741-2735-43d2-8c37-aff7e3075cd4)
+![image](https://github.com/user-attachments/assets/bf0660ca-a2c7-41b0-a45e-961f26813007)
 
-**6.**
+**6.診察記録の登録**
 
+ペットごとの診察内容を登録できます。
+登録ボタンを押すと、診察記録が保存され、一覧ページに反映されます。
+
+
+![image](https://github.com/user-attachments/assets/098499b6-d5ac-43c8-b3f4-b2c4b79e3a2e)
 

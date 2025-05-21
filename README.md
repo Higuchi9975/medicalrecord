@@ -52,14 +52,12 @@
   アカウント登録済みのユーザーがログインするための画面です。
 ユーザー名とパスワードを入力してログインボタンを押すことで認証処理が行われます。
 
-<img width="411" alt="スクリーンショット 2025-05-20 23 29 27" src="https://github.com/user-attachments/assets/16cdb7cc-bd2a-4f32-81da-ccb69d73051c" />
-
 **2.ログイン失敗時**
 
   ユーザー名か、パスワードが間違っていた場合、エラーメッセージ「ログインに失敗しました。」が画面上に赤字で表示されます。
 Spring Security のデフォルトエラーハンドリングをカスタマイズして、視覚的にわかりやすい実装をしています。
 
-<img width="372" alt="スクリーンショット 2025-05-20 23 29 53" src="https://github.com/user-attachments/assets/1e30a09f-5162-43e6-857c-0239b3de9237" />
+![ログイン画面](https://github.com/user-attachments/assets/7eba6b5e-7562-454e-bc2a-8ab1f0017763)
 
-
+**3.
 

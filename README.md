@@ -46,6 +46,7 @@
 - ペット情報の編集・削除機能（CRUD）
 - 予約登録機能
 
+
 ## 利用イメージ
 **1.ログイン画面**
 
@@ -57,7 +58,7 @@
   ユーザー名か、パスワードが間違っていた場合、エラーメッセージ「ログインに失敗しました。」が画面上に赤字で表示されます。
 Spring Security のデフォルトエラーハンドリングをカスタマイズして、視覚的にわかりやすい実装をしています。
 
-![ログイン画面](https://github.com/user-attachments/assets/7eba6b5e-7562-454e-bc2a-8ab1f0017763)
+![ezgif-8a030497300424](https://github.com/user-attachments/assets/cbc9ba17-4145-4cf9-ae4c-9d82db06de04)
 
 **3.
 

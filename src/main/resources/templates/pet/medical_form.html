@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>診察記録登録</title>
+</head>
+<body>
+
+<h2 th:text="${pet.name} + ' の診察記録登録'"></h2>
+
+<!-- 登録フォーム -->
+<form th:action="@{'/pets/' + ${pet.id} + '/medical/add'}" th:object="${medicalRecord}" method="post">
+  <input type="hidden" th:field="*{pet.id}" />
+
+  <label>症状:</label><br>
+  <textarea th:field="*{symptoms}" rows="3" cols="60"></textarea><br><br>
+
+  <label>治療:</label><br>
+  <textarea th:field="*{treatment}" rows="3" cols="60"></textarea><br><br>
+
+  <button type="submit">登録</button>
+</form>
+
+<!-- 一覧表示 -->
+<h3>診察記録一覧</h3>
+<table border="1">
+  <thead>
+  <tr>
+    <th>日付</th>
+    <th>症状</th>
+    <th>治療</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="record : ${medicalList}">
+    <td th:text="${record.visitDate}"></td>
+    <td th:text="${record.symptoms}"></td>
+    <td th:text="${record.treatment}"></td>
+  </tr>
+  </tbody>
+</table>
+
+</body>
+</html>

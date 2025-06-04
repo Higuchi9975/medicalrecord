@@ -5,6 +5,11 @@ import com.myhospital.medicalrecord.entity.Pet;
 import com.myhospital.medicalrecord.repository.MedicalRecordRepository;
 import com.myhospital.medicalrecord.repository.PetRepository;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 import org.springframework.ui.Model;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -29,7 +34,21 @@ public class MedicalRecordController {
     Pet pet = petRepository.findById(petId).orElse(null);
     model.addAttribute("medicalRecord", new MedicalRecord());
     model.addAttribute("pet", pet);
-    return "medical/form";
+    List<MedicalRecord> recordList = medicalRecordRepository.findByPetIdOrderByVisitDateDesc(petId);
+
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+    List<Map<String, String>> recordViewList = recordList.stream()
+        .map(record -> {
+          Map<String, String> map = new HashMap<>();
+          map.put("visitDate", record.getVisitDate().format(formatter));
+          map.put("symptoms", record.getSymptoms());
+          map.put("treatment", record.getTreatment());
+          return map;
+        })
+        .collect(Collectors.toList());
+
+    model.addAttribute("medicalList", recordViewList);
+    return "pet/medical_form";
   }
 
   @PostMapping("/add")
@@ -40,6 +59,6 @@ public class MedicalRecordController {
       medicalRecord.setVisitDate(LocalDate.now()); // or from form
       medicalRecordRepository.save(medicalRecord);
     }
-    return "redirect:/user/" + pet.getUser().getId() + "/pets";
+    return "redirect:/pets/" + petId + "/medical/add";
   }
 }

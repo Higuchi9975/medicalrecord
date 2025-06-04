@@ -5,28 +5,30 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.web.SecurityFilterChain;
 
+// セキュリティ設定クラス（Spring Security）
 @Configuration
 public class SecurityConfig {
 
+  // セキュリティの定義
   @Bean
   public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
     http
-        .authorizeHttpRequests(auth -> auth
-            .anyRequest().permitAll()  // 開発中なので全部アクセス許可
-        )
+        // 開発中のため全URLアクセス許可
+        .authorizeHttpRequests(auth -> auth.anyRequest().permitAll())
         .formLogin(form -> form
-            .loginPage("/login")                 // 自作ログイン画面
-            .loginProcessingUrl("/login")        // フォームの action と一致
-            .defaultSuccessUrl("/user/list", true) // ログイン成功後の画面
-            .permitAll()
-        )
-        .logout(logout -> logout
-            .logoutSuccessUrl("/login?logout")
+            // ログインページのURLを指定
+            .loginPage("/login")
+            // ログインフォームの送信先
+            .loginProcessingUrl("/login")
+            // ログイン成功後のリダイレクト先
+            .defaultSuccessUrl("/user/list", true)
             .permitAll()
         );
+
+    // ★CSRF対策を無効化（開発中のみ。本番では有効にすべき）
     http.csrf(csrf -> csrf.disable());
-    // 開発中はオフにしておく
 
     return http.build();
   }
 }
+

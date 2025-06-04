@@ -7,8 +7,6 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-// これを忘れずに追加！
-import com.myhospital.medicalrecord.entity.User;
 
 @Entity
 @Data

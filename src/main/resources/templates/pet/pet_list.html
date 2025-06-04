@@ -8,7 +8,7 @@
 <body>
 <h2>[[${user.name}]] さんのペット情報</h2>
 <p>
-  <a href="/user/2/pets/add">＋ ペットを追加する</a>
+  <a th:href="@{'/user/' + ${user.id} + '/pets/add'}">+ ペットを追加する</a>
 </p>
 <table border="1">
   <thead>

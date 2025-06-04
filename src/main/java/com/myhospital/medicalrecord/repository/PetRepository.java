@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface PetRepository extends JpaRepository<Pet, Long> {
-  // 必要ならカスタムメソッドを書く（例：findByUserなど）
 
   List<Pet> findByUserId(Long userId);
 
